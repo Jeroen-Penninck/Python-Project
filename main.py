@@ -17,16 +17,18 @@ class Calendar:
 			print("4 Exit Application")
 
 			option = int(input("\n"))
-			
-			if option == 1:
-				valid = True
-				add_event()
-			if option == 2:
-				valid = True
-				view_calendar()
-			if option == 3:
-				valid = True
-				export_calendar()
+			match option:
+				case 1:
+					valid = True
+					add_event()
+				case 2:
+					valid = True
+					view_calendar()
+				case 3:
+					valid = True
+					export_calendar()
+				case 4:
+					break
 
 if __name__ == "__main__":
 	Calendar().menu()
