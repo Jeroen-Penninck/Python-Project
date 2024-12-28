@@ -1,3 +1,5 @@
+from database.database_manager import database_manager
+
 from options.add_event import add_event
 from options.view_calendar import view_calendar
 from options.export_calendar import export_calendar
@@ -31,4 +33,5 @@ class Calendar:
 					break
 
 if __name__ == "__main__":
+	database_manager()
 	Calendar().menu()
