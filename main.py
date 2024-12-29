@@ -14,25 +14,23 @@ class Calendar:
 	def menu(self):
 		valid = False
 		while valid == False:
-			print("1 Add Event")
+			print("\n1 Add Event")
 			print("2 View Calendar")
 			print("3 Export Calendar")
 			print("4 Exit Application")
 
 			option = int(input("\n"))
+			print()
 			match option:
 				case 1:
-					valid = True
 					add_event(self.connection)
 				case 2:
-					valid = True
 					view_calendar(self.connection)
 				case 3:
-					valid = True
 					export_calendar()
 				case 4:
 					close_connections(self.connection)
-					break
+					valid = True
 
 if __name__ == "__main__":
 	Calendar().menu()
