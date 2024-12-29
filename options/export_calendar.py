@@ -5,7 +5,7 @@ def dialogue_file_extension():
 	print("\nChoose file extension:\n1 Excel\n2 CSV\n")
 	extension = input()
 	if extension == "1":
-		extension = ".xlsx"
+		extension = ".xlsb"
 	elif extension == "2":
 		extension = ".csv"
 	else:
@@ -18,7 +18,11 @@ def export_csv(data):
 	file_extension = dialogue_file_extension()
 
 	filename = input("Filename: ")
-	filename = "exports/" + filename + file_extension
+	if filename[-4:] == ".csv" or filename[-5:] == ".xlsx":
+		filename = "exports/" + filename
+	else:
+		filename = "exports/" + filename + file_extension
+
 	with open(filename, mode="w", newline="", encoding="utf8") as file:
 		writer = csv.writer(file)
 		writer.writerow(["Date and time", "Title", "Location"])
@@ -27,6 +31,4 @@ def export_csv(data):
 
 def export_calendar(connection):
 	results = view_calendar(connection)
-	for row in results:
-		csv_data.append(row)
-	export_csv(csv_data)
+	export_csv(results)
