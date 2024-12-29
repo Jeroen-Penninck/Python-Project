@@ -4,7 +4,9 @@ from options.view_calendar import view_calendar
 csv_data = []
 
 def export_csv(data):
-	with open("csv/export.csv", mode="w", newline="", encoding="utf8") as file:
+	filename = input("Filename: ")
+	filename = "csv/" + filename + ".csv"
+	with open(filename, mode="w", newline="", encoding="utf8") as file:
 		writer = csv.writer(file)
 		writer.writerow(["Date and time", "Title", "Location"])
 		for row in data:
