@@ -1,13 +1,13 @@
 import sqlite3
 
 def add_event(connection):
-	title = input("Title: ")
 	date_and_time = input("Date and time: YYYY-MM-DD hh:mm:ss ")
+	title = input("Title: ")
 	location = input("Location: ")
 
 	cursor = connection.cursor()
 
-	cursor.execute("INSERT INTO events (title, date_and_time, location) VALUES (?, ?, ?)",
-					(title, date_and_time, location))
+	cursor.execute("INSERT INTO events (date_and_time, title, location) VALUES (?, ?, ?)",
+					(date_and_time, title, location))
 
 	connection.commit()
