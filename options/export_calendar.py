@@ -6,14 +6,14 @@ def back_to_main():
 	print("\nBack to the main menu.")
 
 def dialogue_file_extension():
-	print("\nChoose file extension:\n1 Excel\n2 CSV\n\n4 Exit\n\n")
+	print("\nChoose file extension:\n1 Excel\n2 CSV\n\n9 Exit\n\n")
 	extension = input()
 	if extension == "1":
 		extension = ".xlsx"
 	elif extension == "2":
 		extension = ".csv"
-	elif extension == "4":
-		extension = 4
+	elif extension == "9":
+		extension = 9
 	else:
 		extension = dialogue_file_extension()
 	return extension
@@ -30,7 +30,7 @@ def export_xlsx(filename, data):
 	df.to_excel(filename, index=False)
 
 def export_handler(data):
-	if dialogue_file_extension() == 4:
+	if dialogue_file_extension() == 9:
 		back_to_main()
 	else:
 		file_extension = dialogue_file_extension()
