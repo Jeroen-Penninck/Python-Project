@@ -1,7 +1,8 @@
 from database.database_manager import database_initializer
 
 from options.events.add_event import add_event
-
+from options.events.edit_event import edit_event
+from options.events.remove_event import remove_event
 
 from options.view_calendar import view_calendar
 from options.export_calendar import export_calendar
@@ -29,10 +30,10 @@ class Calendar:
 			match option:
 				case 1:
 					add_event(self.connection)
-				#case 2:
-
-				#case 3:
-
+				case 2:
+					edit_event(self.connection)
+				case 3:
+					remove_event(self.connection)
 				case 4:
 					view_calendar(self.connection)
 				case 5:
