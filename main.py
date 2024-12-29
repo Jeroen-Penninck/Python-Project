@@ -8,7 +8,8 @@ print("\n *************************************\n | Super Simple Commandline Cal
 
 class Calendar:
 	def __init__(self):
-		pass
+		self.cursor = database_initializer()
+		print(self.cursor)
 
 	def menu(self):
 		valid = False
@@ -33,5 +34,4 @@ class Calendar:
 					break
 
 if __name__ == "__main__":
-	database_initializer()
 	Calendar().menu()
