@@ -16,6 +16,7 @@ class Calendar:
 	def menu(self):
 		valid = False
 		while valid == False:
+			print("\nMAIN MENU")
 			print("\n1 Add Event")
 			print("2 Edit Event")
 			print("3 Remove Event")
