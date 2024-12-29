@@ -10,3 +10,5 @@ def view_calendar(connection):
 	results = cursor.fetchall()
 	for row in results:
 		print(row)
+
+	return results

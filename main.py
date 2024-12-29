@@ -5,7 +5,7 @@ from options.view_calendar import view_calendar
 from options.export_calendar import export_calendar
 from options.exit_application import close_connections
 
-print("\n *************************************\n | Super Simple Commandline Calendar |\n *************************************\n")
+print("\n *************************************\n | Super Simple Commandline Calendar |\n *************************************")
 
 class Calendar:
 	def __init__(self):
@@ -27,7 +27,7 @@ class Calendar:
 				case 2:
 					view_calendar(self.connection)
 				case 3:
-					export_calendar()
+					export_calendar(self.connection)
 				case 4:
 					close_connections(self.connection)
 					valid = True
