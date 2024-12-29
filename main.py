@@ -8,7 +8,7 @@ print("\n *************************************\n | Super Simple Commandline Cal
 
 class Calendar:
 	def __init__(self):
-		self.cursor = database_initializer()
+		self.connection = database_initializer()
 
 	def menu(self):
 		valid = False
@@ -22,7 +22,7 @@ class Calendar:
 			match option:
 				case 1:
 					valid = True
-					add_event(self.cursor)
+					add_event(self.connection)
 				case 2:
 					valid = True
 					view_calendar()

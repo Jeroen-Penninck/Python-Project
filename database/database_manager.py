@@ -8,6 +8,5 @@ def database_initializer():
 		cursor.execute("CREATE TABLE events (title nvarchar(255), date_and_time datetime, location nvarchar(255))")
 	else:
 		connection = sqlite3.connect(DATABASE_PATH)
-		cursor = connection.cursor()
 
-	return cursor
+	return connection
