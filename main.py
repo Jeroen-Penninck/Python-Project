@@ -26,7 +26,7 @@ class Calendar:
 					add_event(self.connection)
 				case 2:
 					valid = True
-					view_calendar()
+					view_calendar(self.connection)
 				case 3:
 					valid = True
 					export_calendar()
