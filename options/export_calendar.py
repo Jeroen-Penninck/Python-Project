@@ -7,16 +7,16 @@ def back_to_main():
 
 def dialogue_file_extension():
 	print("\nChoose file extension:\n1 Excel\n2 CSV\n\n9 Exit\n\n")
-	extension = input()
-	if extension == "1":
-		extension = ".xlsx"
-	elif extension == "2":
-		extension = ".csv"
-	elif extension == "9":
-		extension = "9"
+	res = input()
+	if res == "1":
+		res = ".xlsx"
+	elif res == "2":
+		res = ".csv"
+	elif res == "9":
+		res = "9"
 	else:
-		extension = dialogue_file_extension()
-	return extension
+		res = dialogue_file_extension()
+	return res
 
 def export_csv(filename, data):
 	with open(filename, mode="w", newline="", encoding="utf8") as file:
