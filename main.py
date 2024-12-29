@@ -3,6 +3,7 @@ from database.database_manager import database_initializer
 from options.add_event import add_event
 from options.view_calendar import view_calendar
 from options.export_calendar import export_calendar
+from options.exit_application import close_connections
 
 print("\n *************************************\n | Super Simple Commandline Calendar |\n *************************************\n")
 
@@ -30,6 +31,7 @@ class Calendar:
 					valid = True
 					export_calendar()
 				case 4:
+					close_connections(self.connection)
 					break
 
 if __name__ == "__main__":
