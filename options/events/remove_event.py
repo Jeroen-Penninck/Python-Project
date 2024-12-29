@@ -1,5 +1,21 @@
 from options.view_calendar import view_calendar
 
+def remove_results(results, query, cursor):
+	print("Remove the following event(s)?")
+	print(results)
+	print("\n1 Yes, remove")
+	print("2 No, save\n")
+
+	choice = int(input(""))
+	if choice == 1:
+		delete_query = "DELETE FROM events " + query
+		cursor.execute(delete_query)
+		print("Deleted from database.")
+	elif choice == 2:
+		print("Database stays unchanged.")
+	else:
+		remove_results(results, query)
+
 def remove_event(connection):
 	view_calendar(connection)
 
@@ -33,6 +49,8 @@ def remove_event(connection):
 	print()
 	cursor.execute(specified_query)
 
+	query_conditions = specified_query[21:]
+
 	results = cursor.fetchall()
-	print("Remove the following event(s)?")
-	print(results)
+
+	remove_results(results, query_conditions, cursor)
