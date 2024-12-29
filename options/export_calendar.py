@@ -13,8 +13,6 @@ def dialogue_file_extension():
 		extension = dialogue_file_extension()
 	return extension
 
-csv_data = []
-
 def export_csv(filename, data):
 	with open(filename, mode="w", newline="", encoding="utf8") as file:
 		writer = csv.writer(file)
