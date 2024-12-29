@@ -13,7 +13,7 @@ def dialogue_file_extension():
 	elif extension == "2":
 		extension = ".csv"
 	elif extension == "9":
-		extension = 9
+		extension = "9"
 	else:
 		extension = dialogue_file_extension()
 	return extension
@@ -30,11 +30,11 @@ def export_xlsx(filename, data):
 	df.to_excel(filename, index=False)
 
 def export_handler(data):
-	if dialogue_file_extension() == 9:
+	file_extension = dialogue_file_extension()
+
+	if file_extension == "9":
 		back_to_main()
 	else:
-		file_extension = dialogue_file_extension()
-	
 		filename = input("Filename: ")
 	
 		if filename[-4:] == ".csv":
