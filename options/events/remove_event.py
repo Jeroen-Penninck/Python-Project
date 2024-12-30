@@ -15,7 +15,7 @@ def remove_results(results, query, connection):
 	elif choice == 2:
 		print("Database stays unchanged.")
 	else:
-		remove_results(results, query)
+		remove_results(results, query, connection)
 
 def remove_event(connection):
 	specified_query = build_query(connection)
