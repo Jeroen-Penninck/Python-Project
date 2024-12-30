@@ -10,7 +10,7 @@ def edit_results(results, query, connection):
 	if choice == 1:
 		set_clausule = input("SET ")
 		edit_query = "UPDATE events SET " + set_clausule + query
-		cursor.execute(delete_query)
+		connection.cursor().execute(edit_query)
 		connection.commit()
 		print("Edited database.")
 	elif choice == 2:
@@ -22,6 +22,7 @@ def edit_event(connection):
 	specified_query = build_query(connection)
 
 	cursor = connection.cursor()
+	cursor.execute(specified_query)
 	results = cursor.fetchall()
 
 	query_conditions = specified_query[21:]

@@ -19,11 +19,11 @@ def remove_results(results, query, connection):
 
 def remove_event(connection):
 	specified_query = build_query(connection)
+
 	cursor = connection.cursor()	
 	cursor.execute(specified_query)
+	results = cursor.fetchall()
 
 	query_conditions = specified_query[21:]
-
-	results = cursor.fetchall()
 
 	remove_results(results, query_conditions, connection)
