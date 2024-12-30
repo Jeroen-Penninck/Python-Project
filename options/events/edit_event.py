@@ -8,8 +8,8 @@ def edit_results(results, query, connection):
 
 	choice = int(input(""))
 	if choice == 1:
-		set_clausule = input("SET ")
-		edit_query = "UPDATE events SET " + set_clausule + query
+		set_clause = input("SET ")
+		edit_query = "UPDATE events SET " + set_clause + query
 		connection.cursor().execute(edit_query)
 		connection.commit()
 		print("Edited database.")
