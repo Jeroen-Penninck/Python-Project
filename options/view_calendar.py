@@ -3,7 +3,8 @@ def view_calendar(connection):
 
 	view_query = """
 	SELECT *
-	FROM events"""
+	FROM events
+	ORDER BY date_and_time, title, location"""
 
 	cursor.execute(view_query)
 
